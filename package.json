@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "author": "Satyawan Jagankar <satyawan.jagankar@cvviz.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "ahooks": "^3.7.2",
+    "antd": "^5.0.1",
+    "dayjs": "^1.11.6",
+    "eslint-config-cvviz": "^1.0.4",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-google-recaptcha": "^2.1.0",
+    "react-icons": "^4.6.0",
+    "react-intl": "^6.2.1",
+    "react-share": "^4.4.1",
+    "umi": "^4.0.33"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2",
+    "prettier-plugin-organize-imports": "^2",
+    "prettier-plugin-packagejson": "^2",
+    "typescript": "*"
+  }
+}
