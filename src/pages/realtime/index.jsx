@@ -6,11 +6,11 @@ import Footer from "./Footer";
 
 export default function Page() {
   return (
-    <Row type="flex" gutter={[16, 16]} justify={"space-around"}>
-      <Col span={12}>
-        <Card >
+    <Row justify="center">
+      <Col xs={24} sm={20} md={16} lg={12} xl={12}>
+        <Card style={{ borderRadius: 36 }}>
           <Header />
-          <div style={{ margin: "16px auto" }}>
+          <div style={{ margin: "32px auto" }}>
             <Realtime />
           </div>
           <Footer />

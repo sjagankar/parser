@@ -8,7 +8,7 @@ const ProfessionalExp = ({ professional_experience }) => (
     {professional_experience?.length > 0 && (
       <>
         {professional_experience.map((experience, index) => (
-          <Card key={index} style={{ marginBottom: 16 }}>
+          <Card key={index} style={{ marginBottom: 16, background:'aliceblue' }}>
             <Meta
               title={experience.company}
               description={experience.job_title}

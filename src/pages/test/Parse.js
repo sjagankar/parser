@@ -8,9 +8,11 @@ import { data1 } from "../../constants/parsed_data";
 
 const Parse = ({ fileName, fileType, base64Data, setLoading }) => {
   const { data, loading, runAsync: parseData } = fetchData(realTime);
+  const [fakeLoading, setFakeLoading] = React.useState(false);
 
   const parseResume = () => {
     setLoading(true);
+    setFakeLoading(true);
     const params = {
       file: {
         original_filename: fileName,
@@ -18,9 +20,11 @@ const Parse = ({ fileName, fileType, base64Data, setLoading }) => {
         document_base: base64Data,
       },
     };
-    parseData(params).then((res) => {
-      setLoading(false);
-    });
+
+    setTimeout(() => {
+      setFakeLoading(false);
+    }, 1000);
+
   };
 
   useEffect(() => {
@@ -30,11 +34,10 @@ const Parse = ({ fileName, fileType, base64Data, setLoading }) => {
 
   return (
     <div>
-      <Skeleton active loading={loading}>
-
-        {data?.status && data?.status === "Success" && (
+      <Skeleton active loading={fakeLoading}>
+        {!fakeLoading && (
           <div style={{ marginTop: 24 }}>
-            <ResumeView data={data?.data || {}} />
+            <ResumeView data={data1} />
           </div>
         )}
       </Skeleton>

@@ -7,7 +7,7 @@ const Education = ({ education }) => (
   <List
     dataSource={education}
     renderItem={(item) => (
-      <Card style={{ marginBottom: 16 }}>
+      <Card style={{ marginBottom: 16,  background:'aliceblue'}}>
         <Meta title={item.institution} description={`Major: ${item.major}`} />
         <br />
         <p>Degree: {item.degree}</p>

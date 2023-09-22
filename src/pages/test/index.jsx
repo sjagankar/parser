@@ -1,13 +1,21 @@
-import React from 'react'
-import {data1} from '../../constants/parsed_data';
-import ResumeView from '../../components/ResumeView';
-
+import React from "react";
+import Realtime from "./Realtime";
+import { Card, Row, Col } from "antd";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Page() {
-    return (
-      <div>
-        <h1>Parsed Data View</h1>
-        <ResumeView data={data1} />
-      </div>
-    );
+  return (
+    <Row type="flex" gutter={[16, 16]} justify={"space-around"}>
+      <Col span={12}>
+        <Card style={{borderRadius:36}}>
+          <Header />
+          <div style={{ margin: "32px auto" }}>
+            <Realtime />
+          </div>
+          <Footer />
+        </Card>
+      </Col>
+    </Row>
+  );
 }

@@ -8,7 +8,7 @@ export default function CopyRight() {
       <Paragraph type='secondary'>
         Powered by{' '}
         <Link
-          href="https://cvviz.com/?utm_source=career_page"
+          href="https://cvviz.com"
           target="_blank"
           rel="noreferrer"
         >
@@ -16,7 +16,7 @@ export default function CopyRight() {
         </Link>
         <Link
           type='secondary'
-          href="https://cvviz.com/?utm_source=career_page"
+          href="https://cvviz.com"
           target="_blank"
           rel="noreferrer"
         >

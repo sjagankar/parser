@@ -1,6 +1,6 @@
 export default [
-  { path: '/', redirect: '/realtime' },
-  { path: '/test', component: 'test' },
+  { path: '/', component: 'realtime' },
   { path: '/realtime', component: 'realtime' },
+  { path: '/test', component: 'test' },
 
 ];
