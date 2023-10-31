@@ -12,7 +12,6 @@ const FileUpload = ({ setBase64Data, setFile, setFileType }) => {
     reader.onload = (event) => {
       const base64 = event.target.result;
       setBase64Data(base64);
-      console.log('file', file);
       setFile(file.name);
       setFileType(file.type);
       setFileList([{ uid: file.uid, name: file.name, status: 'done' }]);

@@ -1,3 +1,117 @@
+export const job_data = {
+    "job_title": "REACT JS / NEXT JS DEVELOPER",
+    "company_name": "",
+    "company_description": [
+        ""
+    ],
+    "team_description": [
+        ""
+    ],
+    "locations": [
+        "Ahmedabad (Makarba)",
+        "Mumbai (Borivali)"
+    ],
+    "job_location_type": "In-Office",
+    "employment_type": "Full-Time",
+    "experience_level": "Mid-level",
+    "job_id": "",
+    "job_description_and_responsibilities": [
+        "Design, develop and test UI for mobile and web apps",
+        "Convert designs into ReactJS components and translate project requirements into functional code",
+        "Create effective, reusable code and libraries",
+        "Configure front-end and back-end validations",
+        "Identify and troubleshoot interface software and application issues",
+        "Run unit and integration testing of the application to ensure responsiveness of the user interface design",
+        "Keep documentation of application updates and monitor application performance",
+        "Stick to architectural compliance, functional accuracy validation, and application development best practices"
+    ],
+    "educational_requirements": [
+        {
+            "description": "Bachelor's/Master's degree in Engineering, Computer Science, or IT (or equivalent experience)",
+            "is_minimum_qualification": "Yes"
+        },
+        {
+            "description": "",
+            "is_minimum_qualification": ""
+        }
+    ],
+    "experience_related_requirements": [
+        {
+            "description": "3+ years of experience in web application development (rare exceptions for highly skilled developers)",
+            "is_minimum_qualification": "Yes"
+        },
+        {
+            "description": "Proficiency in NextJS, React.js, Node.js, RESTful web services, HTML, CSS, etc.",
+            "is_minimum_qualification": "Yes"
+        },
+        {
+            "description": "Extensive experience with JavaScript and EcmaScript6, React.js workflows like Flux or Redux",
+            "is_minimum_qualification": "Yes"
+        },
+        {
+            "description": "Profound experience in developing next-generation scalable web applications",
+            "is_minimum_qualification": "Yes"
+        },
+        {
+            "description": "Knowledge of mobile-first responsive design and implementation",
+            "is_minimum_qualification": "Yes"
+        },
+        {
+            "description": "Strong understanding of data structures, algorithms, object-oriented designs and patterns",
+            "is_minimum_qualification": "Yes"
+        },
+        {
+            "description": "Fluent in English",
+            "is_minimum_qualification": "Yes"
+        }
+    ],
+    "work_authorization_requirements": [
+        ""
+    ],
+    "skills_required": [
+        "Next JS"
+    ],
+    "compensation": {
+        "salary_range": {
+            "min": "500,000.00",
+            "max": "900,000.00",
+            "currency": "INR"
+        },
+        "benefits": [
+            ""
+        ],
+        "work_environment": [
+            ""
+        ]
+    },
+    "how_to_apply": {
+        "application_deadline": "",
+        "application_link": "",
+        "contact_email": "",
+        "contact_phone": "+91 9056578828"
+    },
+    "miscellaneous": [
+        "Experience - 3 - 6 Yrs Skiils - Next JS (Mandatory)",
+        "Location -",
+        "Job Type: Full-time",
+        "Salary: ₹500,000.00 - ₹900,000.00 per year",
+        "Schedule:",
+        "Day shift",
+        "Ability to commute/relocate:",
+        "Mumbai Suburban, Maharashtra: Reliably commute or planning to relocate before starting work (Required)",
+        "Application Question(s):",
+        "What are your expectations as a CTC?",
+        "Education:",
+        "Bachelor's (Preferred)",
+        "Experience:",
+        "total work: 3 years (Required)",
+        "Next.js: 1 year (Required)",
+        "Work Location: In person",
+        "Speak with the employer"
+    ]
+};
+
+
 export const data1 = {
     "achievements": [
         {

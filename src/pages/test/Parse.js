@@ -5,6 +5,7 @@ import { realTime } from "@/services/parser";
 import ResumeView from "@/components/ResumeView/index";
 import { FileSearchOutlined } from "@ant-design/icons";
 import { data1 } from "../../constants/parsed_data";
+import ExportData from "@/components/ExportData/index";
 
 const Parse = ({ fileName, fileType, base64Data, setLoading }) => {
   const { data, loading, runAsync: parseData } = fetchData(realTime);
@@ -37,6 +38,9 @@ const Parse = ({ fileName, fileType, base64Data, setLoading }) => {
       <Skeleton active loading={fakeLoading}>
         {!fakeLoading && (
           <div style={{ marginTop: 24 }}>
+            <div>
+              <ExportData data={data1}/>
+            </div>
             <ResumeView data={data1} />
           </div>
         )}

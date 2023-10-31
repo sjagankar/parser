@@ -1,4 +1,7 @@
-const API_PATH = 'https://api.staging.skima.ai/connect/api/v1';
+// const API_PATH = 'https://api.staging.skima.ai/connect/api/v1';
+const API_PATH = 'https://api.cvviz.com/';
+
+
 const TOKEN =
   'd188d164bf9933547abe35a71aa3dd4dd2b3b3c2d4f8dfa7007b72dfb28cbc3b';
 
@@ -31,15 +34,39 @@ export async function realTime(params) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization:
-        'Bearer d188d164bf9933547abe35a71aa3dd4dd2b3b3c2d4f8dfa7007b72dfb28cbc3b',
+      Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify(params),
   };
 
   try {
     const response = await fetch(
-      'https://api.staging.skima.ai/connect/api/v1/parsing/resume_parser_realtime',
+      `${API_PATH}/test/parser/realtime`,
+      options
+    );
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+
+export async function parseJob(params) {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    body: JSON.stringify(params),
+  };
+
+  try {
+    const response = await fetch(
+      `${API_PATH}/test/parser/job`,
       options
     );
     const data = await response.json();
