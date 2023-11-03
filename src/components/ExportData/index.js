@@ -7,7 +7,7 @@ import {
   ExportOutlined,
 } from "@ant-design/icons";
 
-const ExportData = ({ data }) => {
+const ExportData = ({ data, status }) => {
   const exportToJSON = () => {
     const element = document.createElement("a");
     const file = new Blob([JSON.stringify(data)], { type: "text/plain" });
@@ -68,9 +68,9 @@ const ExportData = ({ data }) => {
   return (
     <Row type="flex" justify="space-end">
       <Col>
-        <Dropdown overlay={menu} trigger={["hover"]}>
-          <Button type="primary" style={{ marginBottom: 16 }}>
-            <ExportOutlined /> Export
+        <Dropdown overlay={menu} trigger={["hover"]}  disabled={status!=='complete'}>
+          <Button disabled={status!=='complete'} type="primary" style={{ marginBottom: 16 }}>
+            <ExportOutlined /> Export Data
           </Button>
         </Dropdown>
       </Col>

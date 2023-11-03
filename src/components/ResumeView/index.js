@@ -39,11 +39,9 @@ const ResumeView = ({ data }) => {
       <Row type="flex" justify="space-around">
         <Col span={24}>
           <Collapse
-            size="large"
             defaultActiveKey={[
               "personal-information",
-              "summary-objective",
-              "skills",
+              "summary-objective"
             ]}
             expandIconPosition="right"
           >

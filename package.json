@@ -11,17 +11,20 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "ahooks": "^3.7.2",
-    "antd": "^5.0.1",
+    "antd": "5.10.1",
+    "axios": "^1.6.0",
     "dayjs": "^1.11.6",
     "eslint-config-cvviz": "^1.0.4",
     "json2csv": "^6.0.0-alpha.2",
     "react-copy-to-clipboard": "^5.1.0",
+    "react-google-docs-viewer": "^1.0.1",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.6.0",
     "react-intl": "^6.2.1",
     "react-json-to-csv": "^1.2.0",
     "react-json-view": "^1.21.3",
     "react-share": "^4.4.1",
+    "text-encoding": "^0.7.0",
     "umi": "^4.0.33"
   },
   "devDependencies": {

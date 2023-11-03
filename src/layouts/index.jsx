@@ -17,9 +17,9 @@ export default function PageLayout() {
             <Outlet />
           </Content>
         </div>
-        <div className={styles.footer}>
+        {/* <div className={styles.footer}>
           <GlobalFooter />
-        </div>
+        </div> */}
       </Layout>
     </div>
   );

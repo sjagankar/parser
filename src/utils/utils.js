@@ -252,4 +252,3 @@ export function getRandomTagColor() {
   ];
   return colors[Math.floor(Math.random() * 10) + 1];
 }
-
