@@ -6,12 +6,27 @@ import React from 'react';
 
 export async function getRoutes() {
   return {
-    routes: {"1":{"path":"/","parentId":"@@/global-layout","id":"1","clientLoader":clientLoaders['1']},"2":{"path":"/realtime","parentId":"@@/global-layout","id":"2","clientLoader":clientLoaders['2']},"3":{"path":"/bulk","parentId":"@@/global-layout","id":"3","clientLoader":clientLoaders['3']},"4":{"path":"/job","parentId":"@@/global-layout","id":"4","clientLoader":clientLoaders['4']},"@@/global-layout":{"id":"@@/global-layout","path":"/","isLayout":true}},
+    routes: {"1":{"path":"","redirect":"/resumes","parentId":"2","id":"1","originPath":"/"},"2":{"path":"/","isWrapper":true,"parentId":"@@/global-layout","id":"2","clientLoader":clientLoaders['2']},"3":{"path":"/activation/:id","parentId":"@@/global-layout","id":"3","clientLoader":clientLoaders['3']},"4":{"path":"/resumes","parentId":"@@/global-layout","id":"4","clientLoader":clientLoaders['4']},"5":{"path":"/try","parentId":"@@/global-layout","id":"5","clientLoader":clientLoaders['5']},"6":{"path":"/appsumo","parentId":"@@/global-layout","id":"6","clientLoader":clientLoaders['6']},"7":{"path":"/login","parentId":"@@/global-layout","id":"7","clientLoader":clientLoaders['7']},"8":{"path":"/appsumo/login","parentId":"@@/global-layout","id":"8","clientLoader":clientLoaders['8']},"9":{"path":"/register","parentId":"@@/global-layout","id":"9","clientLoader":clientLoaders['9']},"10":{"path":"/documents","parentId":"@@/global-layout","id":"10"},"11":{"path":"","parentId":"12","id":"11","originPath":"/documents","clientLoader":clientLoaders['11']},"12":{"path":"/documents","isWrapper":true,"parentId":"10","id":"12","clientLoader":clientLoaders['12']},"13":{"path":"","parentId":"14","id":"13","originPath":"/documents/add","clientLoader":clientLoaders['13']},"14":{"path":"/documents/add","isWrapper":true,"parentId":"10","id":"14","clientLoader":clientLoaders['14']},"15":{"path":"","parentId":"16","id":"15","originPath":"/documents/:id","clientLoader":clientLoaders['15']},"16":{"path":"/documents/:id","isWrapper":true,"parentId":"10","id":"16","clientLoader":clientLoaders['16']},"17":{"path":"/jd","parentId":"@@/global-layout","id":"17","clientLoader":clientLoaders['17']},"18":{"path":"","parentId":"19","id":"18","originPath":"/settings","clientLoader":clientLoaders['18']},"19":{"path":"/settings","isWrapper":true,"parentId":"@@/global-layout","id":"19","clientLoader":clientLoaders['19']},"@@/global-layout":{"id":"@@/global-layout","path":"/","isLayout":true}},
     routeComponents: {
-'1': React.lazy(() => import(/* webpackChunkName: "p__advanced__index" */'@/pages/advanced/index.jsx')),
-'2': React.lazy(() => import(/* webpackChunkName: "p__realtime__index" */'@/pages/realtime/index.jsx')),
-'3': React.lazy(() => import(/* webpackChunkName: "p__advanced__index" */'@/pages/advanced/index.jsx')),
-'4': React.lazy(() => import(/* webpackChunkName: "p__job__index" */'@/pages/job/index.jsx')),
+'1': React.lazy(() => import( './EmptyRoute')),
+'2': React.lazy(() => import(/* webpackChunkName: "wrappers__auth" */'@/wrappers/auth.js')),
+'3': React.lazy(() => import(/* webpackChunkName: "p__activation__index" */'@/pages/activation/index.jsx')),
+'4': React.lazy(() => import(/* webpackChunkName: "p__resume_parser__index" */'@/pages/resume_parser/index.jsx')),
+'5': React.lazy(() => import(/* webpackChunkName: "p__resume_parser__index" */'@/pages/resume_parser/index.jsx')),
+'6': React.lazy(() => import(/* webpackChunkName: "p__signup__index" */'@/pages/signup/index.jsx')),
+'7': React.lazy(() => import(/* webpackChunkName: "p__login__index" */'@/pages/login/index.jsx')),
+'8': React.lazy(() => import(/* webpackChunkName: "p__login__index" */'@/pages/login/index.jsx')),
+'9': React.lazy(() => import(/* webpackChunkName: "p__signup__index" */'@/pages/signup/index.jsx')),
+'10': React.lazy(() => import( './EmptyRoute')),
+'11': React.lazy(() => import(/* webpackChunkName: "p__documents__index" */'@/pages/documents/index.jsx')),
+'12': React.lazy(() => import(/* webpackChunkName: "wrappers__auth" */'@/wrappers/auth.js')),
+'13': React.lazy(() => import(/* webpackChunkName: "p__resume_parser__index" */'@/pages/resume_parser/index.jsx')),
+'14': React.lazy(() => import(/* webpackChunkName: "wrappers__auth" */'@/wrappers/auth.js')),
+'15': React.lazy(() => import(/* webpackChunkName: "p__document__index" */'@/pages/document/index.jsx')),
+'16': React.lazy(() => import(/* webpackChunkName: "wrappers__auth" */'@/wrappers/auth.js')),
+'17': React.lazy(() => import(/* webpackChunkName: "p__jd_parser__index" */'@/pages/jd_parser/index.jsx')),
+'18': React.lazy(() => import(/* webpackChunkName: "p__settings__index" */'@/pages/settings/index.jsx')),
+'19': React.lazy(() => import(/* webpackChunkName: "wrappers__auth" */'@/wrappers/auth.js')),
 '@@/global-layout': React.lazy(() => import(/* webpackChunkName: "layouts__index" */'/Users/satya/Documents/workspace/apps/parser/src/layouts/index.jsx')),
 },
   };

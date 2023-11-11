@@ -1,4 +1,4 @@
 export default {
   'footer.poweredby': 'Powered by ',
-  'footer.poweredbyTag': ' Modern Applicant Tracking System',
+  'footer.poweredbyTag': ' AI Recruiting Software',
 };

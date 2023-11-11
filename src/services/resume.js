@@ -5,7 +5,10 @@ const callsCount = [];
 
 const API_PATH = 'https://api.cvviz.com';
 // Replace YOUR_BEARER_TOKEN with your actual bearer token
-const bearerToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7InNldHRpZCI6Ijc3OCIsInNlcnRpZCI6Ijg0OCIsIm5hbWUiOiJTYXR5YSAgSmFnYW5rYXIiLCJlbWFpbCI6InNhdHlhd2FuLmphZ2Fua2FyQGN2dml6LmNvbSIsInJlcGx5X3RvX2xhYmVsIjoiU2F0eWEgSiAoIENWVmlaIEFjYyApIiwicmVwbHlfdG9fZW1haWwiOiJzYXR5YV90ZXN0XzM4YTdkNkBlbWFpbC5jdnZpei5jb20iLCJwZXJtaXNzaW9ucyI6bnVsbCwiY29tcGFueV9uYW1lIjoiSW52b2ljZVRlc3QiLCJjb21wYW55X3R5cGUiOiJTIn19.Sz01s3BIeNK31q7EO6_e0XvxMY96eWvjhZayCLjLnaA';
+let bearerToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7InNldHRpZCI6Ijc3OCIsInNlcnRpZCI6Ijg0OCIsIm5hbWUiOiJTYXR5YSAgSmFnYW5rYXIiLCJlbWFpbCI6InNhdHlhd2FuLmphZ2Fua2FyQGN2dml6LmNvbSIsInJlcGx5X3RvX2xhYmVsIjoiU2F0eWEgSiAoIENWVmlaIEFjYyApIiwicmVwbHlfdG9fZW1haWwiOiJzYXR5YV90ZXN0XzM4YTdkNkBlbWFpbC5jdnZpei5jb20iLCJwZXJtaXNzaW9ucyI6bnVsbCwiY29tcGFueV9uYW1lIjoiSW52b2ljZVRlc3QiLCJjb21wYW55X3R5cGUiOiJTIn19.Sz01s3BIeNK31q7EO6_e0XvxMY96eWvjhZayCLjLnaA';
+import {useAuth} from '@/utils/hooks';
+
+const {token} = useAuth();
 
 
 export async function uploadFiles(params) {
@@ -19,6 +22,10 @@ export async function uploadFiles(params) {
   // console.log('params', params);
 
   // console.log('formData files 22', params.get('files[]'));
+
+
+
+  // return params;
 
   const response = await fetch(`${API_PATH}/test/files/resumes`, {
     method: 'POST',

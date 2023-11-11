@@ -13,3 +13,14 @@ export function fetchData(apiFunction, manual = true, initialValue = []) {
   
     return { data, loading: fetchingData, run: fetchData, runAsync: fetchDataAsync };
   }
+
+  export function useAuth() {
+    const token = localStorage.getItem('token');
+    const showRedeem = localStorage.getItem('showRedeem');
+    return {
+      isLogin: token ? true : false,
+      token,
+      showRedeem,
+      profile: JSON.parse(localStorage.getItem('profile')),
+    };
+  }

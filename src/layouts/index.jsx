@@ -12,14 +12,14 @@ export default function PageLayout() {
     <div className={styles.layout}>
       <Layout>
         <GlobalHeader />
-        <div className={styles.content}>
-          <Content>
+        <div>
+          <Content className={styles.content}>
             <Outlet />
           </Content>
         </div>
-        {/* <div className={styles.footer}>
+        <div>
           <GlobalFooter />
-        </div> */}
+        </div>
       </Layout>
     </div>
   );

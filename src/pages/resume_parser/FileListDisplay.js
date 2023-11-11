@@ -22,13 +22,17 @@ import ExportData from "../../components/ExportData";
 const { Text,Link } = Typography;
 const { Panel } = Collapse;
 
-const customPanelStyle1 = {
-  borderRadius: 4,
-  marginBottom: 24,
-  border: 0,
-  overflow: "hidden",
-  background: "#1890ff05",
+const containerStyle = {
+  width: '100%',
+  height: 1000,
+  overflow: 'auto',
+  border: '1px solid #40a9ff',
 };
+const style = {
+  width: '100%',
+  height: 1000,
+};
+
 
 const FileListDisplay = ({
   jobId,
@@ -42,6 +46,7 @@ const FileListDisplay = ({
 }) => {
   const showList = fileList.length > 0;
   // const [activeKey, setActiveKey] = useState(fileList?.[0].key || 0);
+  const [container, setContainer] = React.useState(null);
   const [exportData, setExportData] = useState([]);
 
   const tabHeader = (item) => (
@@ -85,21 +90,26 @@ const FileListDisplay = ({
   });
 
   return (
-    <Affix offsetTop={10}>
+    // <div  >
+    //   <div style={style}>
+    // <Affix offsetTop={0} target={() => container}>
     <Row type="flex" justify={"space-around"} gutter={12}>
-      <Col span={22}>
+      <Col span={24}>
         {showList && (
           <Tabs
+          ref={setContainer}
             type="card"
             tabPosition="top"
             items={tabItems}
-            style={{ height: 1000 }}
+
             tabBarExtraContent={<ExportData data={exportData} status={status}/>}
           />
         )}
       </Col>
     </Row>
-    </Affix>
+    // </Affix>
+    // </div>
+    // </div>
   );
 };
 

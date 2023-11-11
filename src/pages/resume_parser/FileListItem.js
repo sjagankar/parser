@@ -11,8 +11,10 @@ import {
 } from '@ant-design/icons';
 import { fetchData } from '@/utils/hooks';
 import { advanceParseRequest } from '@/services/resume';
+import { parseRequest } from '@/services/apis';
 import ResumeView from '@/components/ResumeView/index';
 import FileViewer from '@/components/FileViewer/index';
+import {useAuth} from "@/utils/hooks";
 
 const { Panel } = Collapse;
 
@@ -30,6 +32,7 @@ const FileListItem = ({
   tags,
   setExportData,
 }) => {
+  const { isLogin } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [isDuplicate, setIsDuplicate] = useState(false);
@@ -40,7 +43,7 @@ const FileListItem = ({
     data,
     loading,
     runAsync: getParseRequest,
-  } = fetchData(advanceParseRequest, true, []);
+  } = fetchData(isLogin ? parseRequest :  advanceParseRequest, true, []);
 
   useEffect(() => {
     let intervalId;

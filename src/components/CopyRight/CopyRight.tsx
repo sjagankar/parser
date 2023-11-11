@@ -20,7 +20,7 @@ export default function CopyRight() {
           target="_blank"
           rel="noreferrer"
         >
-          , Modern Applicant Tracking System
+          , AI Recruiting Software
         </Link>
         !
       </Paragraph>
