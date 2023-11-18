@@ -1,6 +1,6 @@
 export default [
   {
-    path: '/', redirect: '/resumes', wrappers: [
+    path: '/', redirect: '/try', wrappers: [
       '@/wrappers/auth',
     ],
   },
@@ -39,6 +39,11 @@ export default [
   },
   {
     path: '/settings', component: 'settings', wrappers: [
+      '@/wrappers/auth',
+    ],
+  },
+  {
+    path: '/documentation', component: 'documentation', wrappers: [
       '@/wrappers/auth',
     ],
   },

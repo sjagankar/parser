@@ -59,9 +59,9 @@ const ExportData = ({ data, status }) => {
       <Menu.Item key="json" onClick={exportToJSON}>
         <FileOutlined /> Export to JSON
       </Menu.Item>
-      <Menu.Item key="csv" onClick={exportToCSV}>
+      {/* <Menu.Item key="csv" onClick={exportToCSV}>
         <FileExcelOutlined /> Export to CSV
-      </Menu.Item>
+      </Menu.Item> */}
     </Menu>
   );
 

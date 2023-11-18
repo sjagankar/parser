@@ -5,6 +5,7 @@ import metaConfig from './meta.config';
 export default {
   npmClient: 'yarn',
   routes: pageRoutes,
+  mfsu: false,
   proxy: {
     '/api/': {
       target: `https://api.cvviz.com`,

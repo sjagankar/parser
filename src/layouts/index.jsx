@@ -1,26 +1,39 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-import React from "react";
-import GlobalHeader from "@/components/GlobalHeader";
-import GlobalFooter from "@/components/GlobalFooter";
+import React from 'react';
+import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
+import { Breadcrumb, Layout, Menu, theme } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
 import { Outlet, matchRoutes, useParams } from "umi";
-import { Layout, ConfigProvider, theme, Result } from "antd";
-const { Content } = Layout;
+import GlobalHeader from '@/components/GlobalHeader';
+import GlobalFooter from './GlobalFooter';
 import styles from "./index.less";
 
-export default function PageLayout() {
+
+const App = () => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
   return (
-    <div className={styles.layout}>
-      <Layout>
-        <GlobalHeader />
-        <div>
-          <Content className={styles.content}>
-            <Outlet />
-          </Content>
-        </div>
-        <div>
-          <GlobalFooter />
-        </div>
-      </Layout>
-    </div>
+    <Layout>
+      <GlobalHeader/>
+      <Content
+        style={{
+          padding: '0 50px',
+          marginTop: '24px',
+        }}
+      >
+        {/* <Breadcrumb
+          style={{
+            margin: '16px 0',
+          }}
+        >
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+          <Breadcrumb.Item>List</Breadcrumb.Item>
+          <Breadcrumb.Item>App</Breadcrumb.Item>
+        </Breadcrumb> */}
+        <Outlet />
+      </Content>
+      <GlobalFooter/>
+    </Layout>
   );
-}
+};
+export default App;

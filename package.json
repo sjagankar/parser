@@ -17,6 +17,7 @@
     "eslint-config-cvviz": "^1.0.4",
     "json2csv": "^6.0.0-alpha.2",
     "react-copy-to-clipboard": "^5.1.0",
+    "react-docgen": "^7.0.1",
     "react-google-docs-viewer": "^1.0.1",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.6.0",
@@ -24,6 +25,10 @@
     "react-json-to-csv": "^1.2.0",
     "react-json-view": "^1.21.3",
     "react-share": "^4.4.1",
+    "react-swagger-ui": "^3.0.17-0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-dist": "^5.9.4",
+    "swagger-ui-react": "^5.9.4",
     "text-encoding": "^0.7.0",
     "umi": "^4.0.33"
   },

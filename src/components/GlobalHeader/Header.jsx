@@ -3,11 +3,15 @@ import { inIframe, addHttps, isEmpty } from "@/utils/utils";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { useTheme } from "@/utils/theme";
 import logo from "@/assets/logo.svg";
-import { Button, Flex, Space } from "antd";
+import { Button, Flex, Space, Layout, Menu } from "antd";
 import FreeTrialModal from "../FreeTrialForm/FreeTrialModal";
 import Profile from "./Profile";
-import { useNavigate } from "umi";
+import { useNavigate, useLocation } from "umi";
 import { useAuth } from "@/utils/hooks";
+const { Header } = Layout;
+
+// import Settings icon from ant design icons
+import { SettingOutlined } from "@ant-design/icons";
 
 const headerStyle = {
   // backgroundColor: '#dee0e3',
@@ -18,58 +22,52 @@ const headerStyle = {
 
 const GlobalHeader = () => {
   let navigate = useNavigate();
+  let location = useLocation();
+  const pathValue = location.pathname.split("/")[1];
   const theme = useTheme();
   const { isLogin, profile } = useAuth();
 
-  const headerSection = (
-    <div style={headerStyle}>
-      <Flex justify={"space-between"} align={"center"}>
-        <Space align="center">
-          <a
-            href={"#"}
-            onClick={(e) => {
-              e.preventDefault();
-              isLogin
-                ? navigate("/documents", { replace: true })
-                : navigate("/", { replace: true });
-            }}
-            style={{ fontWeight: 600, color: theme.colorPrimary }}
-          >
-            <img src={logo} alt="Logo" style={{ height: "36px" }} />
-          </a>
-          { isLogin && (
-            <Button
-              type="link"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/resumes", { replace: true });
-              }}
-              style={{ fontWeight: 600 }}
-            >
-              Resume Parser
-            </Button>
-          )}
+  const items = [
+    {
+      key: "try",
+      label: "Try Parser",
+      path: "/try",
+    },
+  ];
 
-          {false && isLogin && (
-            <Button
-              type="link"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/documents", { replace: true });
-              }}
-              style={{ fontWeight: 600 }}
-            >
-              Documents
-            </Button>
-          )}
-        </Space>
-        {isLogin ? (
-          <Profile profile={profile} avatarUrl={null} />
-        ) : (
-          <FreeTrialModal />
-        )}
-      </Flex>
-    </div>
+  if (isLogin) {
+    items.push({
+      key: "documentation",
+      label: "Documentation",
+      path: "/documentation",
+    });
+  }
+
+  const headerSection = (
+    <Header
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <img src={logo} alt="Logo" style={{ height: "36px", marginRight:24}} />
+      <Menu
+        onSelect={(item) => {
+          navigate(`/${item.key}`, { replace: true });
+        }}
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={[pathValue]}
+        activeKey={[pathValue]}
+        items={items}
+        style={{
+          width: 500
+        }}
+      />
+
+      <div style={{ flex: 1 }}></div>
+      {isLogin ? <Profile profile /> : <FreeTrialModal />}
+    </Header>
   );
 
   return !inIframe() ? headerSection : <></>;
