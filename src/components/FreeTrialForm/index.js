@@ -71,20 +71,20 @@ const FreeTrialForm = ({
       {/* <Form.Item label="Designation" name="designation">
         <Input placeholder="Designation" />
       </Form.Item> */}
-
-      <Form.Item
-        label="Phone"
-        name="phone"
-        rules={[
-          {
-            required: true,
-            message: "Please input your phone!",
-          },
-        ]}
-      >
-        <Input placeholder="Phone" />
-      </Form.Item>
-
+      {!isAppsumoUser && (
+        <Form.Item
+          label="Phone"
+          name="phone"
+          rules={[
+            {
+              required: true,
+              message: "Please input your phone!",
+            },
+          ]}
+        >
+          <Input placeholder="Phone" />
+        </Form.Item>
+      )}
       <Form.Item
         label="Expected Monthly Volume"
         name="expected_monthly_volume"

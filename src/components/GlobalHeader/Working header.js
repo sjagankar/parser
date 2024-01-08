@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { inIframe, addHttps, isEmpty } from "@/utils/utils";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { useTheme } from "@/utils/theme";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo.png";
 import { Button, Flex, Space } from "antd";
 import FreeTrialModal from "../FreeTrialForm/FreeTrialModal";
 import Profile from "./Profile";
