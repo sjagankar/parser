@@ -15,6 +15,20 @@ export async function register(params) {
   return response.json();
 }
 
+
+export async function resetPassword(params) {
+  // console.log("params", params);
+  const response = await fetch(`${API_PATH}/parser/resetpassword`, {
+    method: "POST",
+    body: JSON.stringify(params),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return response.json();
+}
+
 export async function login(params) {
   const response = await fetch(`${API_PATH}/parser/login`, {
     method: "POST",
@@ -43,6 +57,21 @@ export async function usage(params) {
 export async function createApiKey(params) {
   const token = localStorage.getItem("token");
   const response = await fetch(`${API_PATH}/parser/api_keys`, {
+    method: "POST",
+    body: JSON.stringify(params),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return response.json();
+}
+
+
+export async function updatePassword(params) {
+  const token = localStorage.getItem("token");
+  const response = await fetch(`${API_PATH}/parser/update_password`, {
     method: "POST",
     body: JSON.stringify(params),
     headers: {

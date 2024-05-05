@@ -7,6 +7,7 @@ import { login } from "@/services/apis";
 
 const Login = () => {
   const [isAppsumoUser, setIsAppsumoUser] = useState(false);
+  const [loginError, setLoginError] = useState(false);
   useEffect(() => {
     // clear localStorage profile item if present
     localStorage.removeItem("profile");
@@ -31,6 +32,7 @@ const handleSubmit = async (values) => {
       if (values.isAppsumoUser) {
         localStorage.setItem("showRedeem", true);
       }
+      setLoginError(false);
       // check if token is set in localStorage before navigating
       if (localStorage.getItem("token")) {
         if (values.isAppsumoUser) {
@@ -39,6 +41,8 @@ const handleSubmit = async (values) => {
           navigate("/");
         }
       }
+    }else{
+      setLoginError(true);
     }
   } catch (error) {
     // Handle any errors here
@@ -51,12 +55,18 @@ const handleSubmit = async (values) => {
       <Typography.Title level={3}>Login</Typography.Title>
       <LoginForm handleSubmit={handleSubmit} />
       <Row type="flex" justify={"center"}>
-        <Col span={24}>
+      <Col span={24}>
           <Button loading={loading} block form="login" type="primary" htmlType="submit">
             Login
           </Button>
-        </Col>
-
+        </Col>        
+        {loginError && (
+          <Col span={24}>
+            <Typography.Text type="danger">
+              Email or password is incorrect
+            </Typography.Text>
+          </Col>
+        )}
         <Divider>
           <Typography.Text type="secondary">OR</Typography.Text>{" "}
         </Divider>
@@ -71,6 +81,12 @@ const handleSubmit = async (values) => {
             }
           >
             Register
+          </Button>
+        </Col>
+
+        <Col span={24}>
+          <Button block form="login" type="link" onClick ={()=> navigate("/forgot-password")}>
+            Forgot your password ?
           </Button>
         </Col>
       </Row>

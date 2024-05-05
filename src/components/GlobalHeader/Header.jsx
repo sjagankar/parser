@@ -27,10 +27,17 @@ const GlobalHeader = () => {
   const theme = useTheme();
   const { isLogin, profile } = useAuth();
 
+  const tryStyle = {
+    color: '#f1f1f1',
+    background: '#1778ff',
+    padding: '5px 20px',
+    borderRadius: '20px'
+  }
+
   const items = [
     {
       key: "try",
-      label: "Try Parser",
+      label: (<span style={isLogin ?  {} : tryStyle}>Parser</span>),
       path: "/try",
     },
   ];
@@ -57,8 +64,7 @@ const GlobalHeader = () => {
         }}
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={[pathValue]}
-        activeKey={[pathValue]}
+        selectedKeys={[pathValue]}
         items={items}
         style={{
           width: 500

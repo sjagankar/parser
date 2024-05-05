@@ -9,6 +9,7 @@ export default [
   { path: '/try', component: 'resume_parser' },
   { path: '/appsumo', component: 'signup' },
   { path: '/login', component: 'login' },
+  { path: '/forgot-password', component: 'forgot_password' },
   { path: '/appsumo/login', component: 'login' },
   { path: '/register', component: 'signup' },
   {

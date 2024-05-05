@@ -1,0 +1,26 @@
+.success,
+.warning,
+.error {
+  transition: color 0.3s;
+}
+
+.success {
+  color: green;
+}
+
+.warning {
+  color: orange;
+}
+
+.error {
+  color: red;
+}
+
+.progress-pass > .progress {
+  :global {
+    .ant-progress-bg {
+      background-color: orange;
+    }
+  }
+}
+
