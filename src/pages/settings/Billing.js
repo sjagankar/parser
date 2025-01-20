@@ -16,6 +16,8 @@ import React, { useState, useEffect } from "react";
 import { fetchData, useAuth } from "@/utils/hooks";
 import { usage, redeemCode } from "@/services/apis";
 import CreditsList from "@/pages/settings/CreditsList";
+import TopupUsage from "./TopupUsage";
+import dayjs from "dayjs";
 
 const Billing = ({ showRedeem }) => {
   const [totalCredits, setTotalCredits] = useState(0);
@@ -24,7 +26,12 @@ const Billing = ({ showRedeem }) => {
   const [plan, setPlan] = useState(null);
   const [endDate, setEndDate] = useState(null); // [startDate, setStartDate
   const [openRedeemModal, setOpenRedeemModal] = useState(showRedeem);
-  const [monthlyUsage, setMonthlyUsage] = useState({ month_name: '', year_value:'', record_count:0}); // [startDate, setStartDate
+  const [topupUsage, setTopupUsage] = useState(null);
+  const [monthlyUsage, setMonthlyUsage] = useState({
+    month_name: "",
+    year_value: "",
+    record_count: 0,
+  }); // [startDate, setStartDate
   const [creditsList, setCreditsList] = useState([]);
   const { token } = useAuth();
 
@@ -43,6 +50,7 @@ const Billing = ({ showRedeem }) => {
       setCreditsList(data.credits);
       setMonthlyUsage(data.monthly_usage);
       setEndDate(data.end_date);
+      setTopupUsage(data.topup_usage);
       setPlan(data.plan);
       if (showRedeem) {
         setOpenRedeemModal(true);
@@ -50,7 +58,6 @@ const Billing = ({ showRedeem }) => {
       }
     });
   }, [token]);
-
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -83,35 +90,45 @@ const Billing = ({ showRedeem }) => {
     <div>
       <Spin spinning={loading}>
         <Divider />
-        {plan && 
-        <Row gutter={32} type='flex'>
-          <Col span={24}>
-
-          <Statistic title="Current Plan" value={plan.name} />
+        {plan && (
+          <Row gutter={32} type="flex">
+            <Col span={24}>
+              <Statistic title="Current Plan" value={plan.name} />
             </Col>
-            <Col span={24} style={{marginTop:32}}>
-            <Statistic title="Plan Expiry" value={plan.is_lifetime_deal==='1' ? 'Lifetime' : endDate} />
+            <Col span={24} style={{ marginTop: 32 }}>
+              <Statistic
+                title="Plan Expiry"
+                value={plan.is_lifetime_deal === "1" ? "Lifetime" : endDate}
+              />
             </Col>
+          </Row>
+        )}
+        <Divider plain orientation="left" style={{ marginTop: 32 }}>
+          Credits for current Cycle ({monthlyUsage.month_name}'{" "}
+          {monthlyUsage.year_value})
+        </Divider>
+        <Row type="flex" justify="space-between">
+          <Col span={8}>
+            <Statistic title="Total Credits" value={totalCredits} />
+          </Col>
+          <Col span={8}>
+            <Statistic title="Credits Used" value={monthlyUsage.record_count} />
+          </Col>
+          <Col span={8}>
+            <Statistic title="Credits Remaining" value={creditsRemaining} />
+          </Col>
         </Row>
-}
-        <Divider plain orientation="left" style={{marginTop: 32}}>
-          Credits for current Cycle ({monthlyUsage.month_name}' {monthlyUsage.year_value})
-          </Divider>
-        <Row type='flex' justify='space-between'>
-          <Col span={8}>
 
-          <Statistic title="Total Credits" value={totalCredits} />
-            </Col>
-          <Col span={8}>
 
-          <Statistic title="Credits Used" value={monthlyUsage.record_count} />
-            </Col>
-          <Col span={8}>
+        {topupUsage && topupUsage.has_topup && (
+          <div style={{ marginTop: 32 }}>
+            <Divider plain orientation="left">
+                Topup Usage (Valid Till {dayjs(topupUsage.end_date).format("DD-MM-YYYY")})      
+            </Divider>
+            <TopupUsage data={topupUsage} />
+          </div>
+        )}
 
-          <Statistic title="Credits Remaining" value={creditsRemaining} />
-            </Col>
-        </Row>
-      
         <Divider />
       </Spin>
 

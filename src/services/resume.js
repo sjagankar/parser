@@ -27,7 +27,7 @@ export async function uploadFiles(params) {
 
   // return params;
 
-  const response = await fetch(`${API_PATH}/test/files/resumes`, {
+  const response = await fetch(`${API_PATH}/parser/files/resumes`, {
     method: 'POST',
     body: params,
     headers: {
