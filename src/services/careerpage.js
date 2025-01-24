@@ -191,9 +191,3 @@ export async function getDiscoverQuestions(id) {
 
 // }
 
-export async function uploadDocument(params) {
-  return axios.post(`/api/test/files/upload`, params, {
-    headers: { 'X-Requested-With': 'XMLHttpRequest' },
-    headers: { 'Content-Type': 'multipart/form-data' },
-  });
-}

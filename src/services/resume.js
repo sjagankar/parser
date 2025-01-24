@@ -43,14 +43,6 @@ export async function uploadFiles(params) {
 }
 
 
-// export async function uploadFiles(params) {
-//   return axios.post(`${API_PATH}/test/files/resumes`, params, {
-//     headers: { 'X-Requested-With': 'XMLHttpRequest' },
-//     headers: { 'Content-Type': 'multipart/form-data' },
-//   });
-// }
-
-
 
 
 export async function getBulkParseRequest(request_id) {
@@ -306,19 +298,6 @@ export async function advanceParse(params) {
   
   return response;
 }
-
-// export async function advanceBulkParse(params) {
-//     const response = await fetch(`${API_PATH}/test/parser/background_bulk`, {
-//       method: 'POST',
-//       body: JSON.stringify(params),
-//       headers: {
-//         'Content-Type': 'application/json',
-//         Authorization: `Bearer ${bearerToken}`,
-//       },
-//     });
-  
-//     return response.json();
-//   }
 
 
   export async function advanceBulkParse(params) {
